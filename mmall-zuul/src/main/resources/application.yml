@@ -1,0 +1,22 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: zuul
+  redis:
+    host: 49.232.46.23
+eureka:
+  client:
+    service-url:
+      defaultZone: http://mmall-eureka:8000/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    user:
+      path: /mmall-user/**
+      serviceId: user
+      strip-prefix: false
+  sensitive-headers:
+logging:
+  file: /logs/mmall.log

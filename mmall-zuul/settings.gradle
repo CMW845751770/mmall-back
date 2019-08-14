@@ -1,0 +1,3 @@
+rootProject.name = 'mmall-zuul'
+
+includeFlat('mmall-commons')

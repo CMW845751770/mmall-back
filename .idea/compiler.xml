@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cn.edu.tju.mmall-commons.main" target="1.8" />
+      <module name="cn.edu.tju.mmall-commons.test" target="1.8" />
+      <module name="cn.edu.tju.mmall-consumer.main" target="1.8" />
+      <module name="cn.edu.tju.mmall-consumer.test" target="1.8" />
+      <module name="cn.edu.tju.mmall-eureka.main" target="1.8" />
+      <module name="cn.edu.tju.mmall-eureka.test" target="1.8" />
+      <module name="cn.edu.tju.mmall-user.main" target="1.8" />
+      <module name="cn.edu.tju.mmall-user.test" target="1.8" />
+      <module name="cn.edu.tju.mmall-zuul.main" target="1.8" />
+      <module name="cn.edu.tju.mmall-zuul.test" target="1.8" />
+      <module name="cn.edu.tju.mmall.main" target="1.8" />
+      <module name="cn.edu.tju.mmall.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

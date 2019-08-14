@@ -1,0 +1,54 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: eurekaServer
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    instance:
+      hostname: localhost
+    service-url:
+      defaultZone: http://${eureka.client.instance.hostname}:${server.port}/eureka/
+#---
+#        server:
+#          port: 8000
+#        spring:
+#          application:
+#            name: eurekaServer1
+#          profiles: eurekaServer1
+#        eureka:
+#          instance:
+#            prefer-ip-address: false
+#          client:
+#            service-url:
+#              defaultZone: http://eurekaServer2:8001/eureka/,http://eurekaServer3:8002/eureka/
+#---
+#server:
+#  port: 8001
+#spring:
+#  application:
+#    name: eurekaServer2
+#  profiles: eurekaServer2
+#eureka:
+#  instance:
+#    prefer-ip-address: false
+#  client:
+#    service-url:
+#      defaultZone: http://eurekaServer1:8000/eureka/,http://eurekaServer3:8002/eureka/
+#---
+#server:
+#  port: 8002
+#spring:
+#  application:
+#    name: eurekaServer3
+#  profiles: eurekaServer3
+#eureka:
+#  instance:
+#    prefer-ip-address: false
+#  client:
+#    service-url:
+#      defaultZone: http://eurekaServer2:8001/eureka/,http://eurekaServer1:8001/eureka/
+logging:
+  file: /logs/mmall.log

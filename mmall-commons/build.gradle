@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group = 'cn.edu.tju'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.7.RELEASE'
+
+}

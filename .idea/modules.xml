@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mmall.iml" filepath="$PROJECT_DIR$/.idea/modules/mmall.iml" />
+    </modules>
+  </component>
+</project>
