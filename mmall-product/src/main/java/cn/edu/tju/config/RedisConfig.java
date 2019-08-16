@@ -18,22 +18,6 @@ import java.text.SimpleDateFormat;
 public class RedisConfig {
 
     @SuppressWarnings("rawtypes")
-    @Bean
-    public RedisTemplate redisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate redisTemplate = new RedisTemplate();
-        RedisSerializer stringSerializer = new StringRedisSerializer();
-        ObjectMapper om = new ObjectMapper();
-        om.setDateFormat(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"));
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(User.class) ;
-        jackson2JsonRedisSerializer.setObjectMapper(om);
-        redisTemplate.setConnectionFactory(factory);
-        redisTemplate.setKeySerializer(stringSerializer);
-        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
-        redisTemplate.setHashKeySerializer(stringSerializer);
-        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
-        return redisTemplate;
-    }
-
     @Bean("myStringRedisTemplate")
     public RedisTemplate stringRedisTemplate(RedisConnectionFactory factory) {
         RedisTemplate stringRedisTemplate = new RedisTemplate();

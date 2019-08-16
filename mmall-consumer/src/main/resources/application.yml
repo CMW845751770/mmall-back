@@ -8,12 +8,18 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  main:
+    allow-bean-definition-overriding: true
 eureka:
   client:
     service-url:
-      defaultZone: http://mmall-eureka:8000/eureka/
+      defaultZone: http://localhost:8000/eureka/
+      #defaultZone: http://mmall-eureka:8000/eureka/
   instance:
     prefer-ip-address: true
 feign:
   hystrix:
     enabled: false
+ribbon:
+  ReadTimeout: 10000
+  SocketTimeout: 30000

@@ -11,6 +11,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.7.RELEASE'
+    compile ('com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10'){
 
+//excluding a particular transitive dependency:
+        exclude group: 'org.mybatis.spring.boot' //by group
+        exclude group: 'org.springframework.boot' //by group
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.7.RELEASE'
 }

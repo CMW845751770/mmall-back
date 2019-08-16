@@ -50,5 +50,5 @@ eureka:
 #  client:
 #    service-url:
 #      defaultZone: http://eurekaServer2:8001/eureka/,http://eurekaServer1:8001/eureka/
-logging:
-  file: /logs/mmall.log
+#logging:
+#  file: /logs/mmall.log

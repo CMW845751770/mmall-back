@@ -3,12 +3,11 @@ server:
 spring:
   application:
     name: zuul
-  redis:
-    host: 49.232.46.23
 eureka:
   client:
     service-url:
-      defaultZone: http://mmall-eureka:8000/eureka/
+      defaultZone: http://localhost:8000/eureka/
+#      defaultZone: http://mmall-eureka:8000/eureka/
   instance:
     prefer-ip-address: true
 zuul:
@@ -17,6 +16,13 @@ zuul:
       path: /mmall-user/**
       serviceId: user
       strip-prefix: false
+    product:
+      path: /mmall-product/**
+      serviceId: product
+      strip-prefix: false
   sensitive-headers:
 logging:
-  file: /logs/mmall.log
+ribbon:
+  ReadTimeout: 10000
+  SocketTimeout: 30000
+#  file: /logs/mmall.log

@@ -49,6 +49,18 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-product" />
+        <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/mmall-commons" />
+            <option value="$PROJECT_DIR$/mmall-product" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-user" />
         <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
         <option name="modules">
@@ -65,7 +77,6 @@
         <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/mmall-commons" />
             <option value="$PROJECT_DIR$/mmall-zuul" />
           </set>
         </option>

@@ -1,0 +1,3 @@
+rootProject.name = 'mmall-product'
+
+includeFlat('mmall-commons')

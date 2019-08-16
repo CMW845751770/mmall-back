@@ -18,7 +18,8 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://mmall-eureka:8000/eureka/
+      defaultZone: http://localhost:8000/eureka/
+      #defaultZone: http://mmall-eureka:8000/eureka/
   instance:
     prefer-ip-address: true
 mybatis:
@@ -27,4 +28,4 @@ mybatis:
 logging:
   level:
     cn.edu.tju.mapper: debug
-  file: /logs/mmall.log
+#  file: /logs/mmall.log
