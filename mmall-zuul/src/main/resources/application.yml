@@ -20,6 +20,10 @@ zuul:
       path: /mmall-product/**
       serviceId: product
       strip-prefix: false
+    cart:
+      path: /mmall-cart/**
+      serviceId: cart
+      strip-prefix: false
   sensitive-headers:
 logging:
 ribbon:

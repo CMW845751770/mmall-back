@@ -17,5 +17,6 @@ dependencies {
         exclude group: 'org.mybatis.spring.boot' //by group
         exclude group: 'org.springframework.boot' //by group
     }
+    compile group: 'commons-net', name: 'commons-net', version: '3.1'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.7.RELEASE'
 }

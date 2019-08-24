@@ -1,0 +1,32 @@
+server:
+  port: 4869
+  servlet:
+    context-path: /mmall-pay
+spring:
+  application:
+    name: pay
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://49.232.46.23:3306/mmall?serverTimezone=UTC
+    username: root
+    password: root
+  redis:
+    host: 49.232.46.23
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+eureka:
+  client:
+    service-url:
+            defaultZone: http://localhost:8000/eureka/
+#      defaultZone: http://mmall-eureka:8000/eureka/
+  instance:
+    prefer-ip-address: true
+mybatis:
+  type-aliases-package: cn.edu.tju.pojo
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    cn.edu.tju.mapper: debug

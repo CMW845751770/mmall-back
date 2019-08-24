@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" />
@@ -11,6 +14,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-eureka.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.test.iml" />

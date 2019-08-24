@@ -16,9 +16,15 @@ public class Product2ProductDetailVoUtil {
         ProductDetailVo productDetailVo = new ProductDetailVo() ;
         BeanUtils.copyProperties(product,productDetailVo);
         DateFormat dateFormat = DateFormat.getDateTimeInstance() ;
-        productDetailVo.setCreateTime(dateFormat.format(product.getCreateTime()));
+        if(product.getCreateTime()!=null)
+        {
+            productDetailVo.setCreateTime(dateFormat.format(product.getCreateTime()));
+        }
         log.info("【转换后的create时间字符串为：】",productDetailVo.getCreateTime());
-        productDetailVo.setUpdateTime(dateFormat.format(product.getUpdateTime()));
+        if(product.getUpdateTime() != null )
+        {
+            productDetailVo.setUpdateTime(dateFormat.format(product.getUpdateTime()));
+        }
         log.info("【转换后的update时间字符串为：】",productDetailVo.getUpdateTime());
         productDetailVo.setImageHost(imgPrefix);
         return productDetailVo  ;

@@ -15,6 +15,18 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-cart" />
+        <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/mmall-cart" />
+            <option value="$PROJECT_DIR$/mmall-commons" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-commons" />
         <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
         <option name="modules">
@@ -43,6 +55,18 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/mmall-eureka" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-pay" />
+        <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/mmall-commons" />
+            <option value="$PROJECT_DIR$/mmall-pay" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
