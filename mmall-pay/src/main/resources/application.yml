@@ -1,5 +1,5 @@
 server:
-  port: 4869
+  port: 7003
   servlet:
     context-path: /mmall-pay
 spring:
@@ -18,8 +18,8 @@ spring:
 eureka:
   client:
     service-url:
-            defaultZone: http://localhost:8000/eureka/
-#      defaultZone: http://mmall-eureka:8000/eureka/
+#            defaultZone: http://localhost:8000/eureka/
+      defaultZone: http://mmall-eureka:8000/eureka/
   instance:
     prefer-ip-address: true
 mybatis:

@@ -10,6 +10,7 @@ import cn.edu.tju.pojo.OrderItem;
 import cn.edu.tju.pojo.PayInfo;
 import cn.edu.tju.service.PayService;
 import cn.edu.tju.utils.ArithUtil;
+import cn.edu.tju.utils.DateTimeUtil;
 import cn.edu.tju.utils.FTPUtil;
 import cn.edu.tju.utils.PropertiesUtil;
 import com.alipay.api.AlipayResponse;
@@ -34,6 +35,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -169,7 +171,7 @@ public class PayServiceImpl implements PayService {
     }
 
     @Override
-    public ServerResponse aliCallback(Map<String, String> params) throws ParseException {
+    public ServerResponse aliCallback(Map<String, String> params) {
         Long orderNo = Long.parseLong(params.get("out_trade_no"));
         String tradeNo = params.get("trade_no");
         String tradeStatus = params.get("trade_status");
@@ -181,7 +183,7 @@ public class PayServiceImpl implements PayService {
             return ServerResponse.createBySuccess("支付宝重复调用");
         }
         if(Const.AlipayCallback.TRADE_STATUS_TRADE_SUCCESS.equals(tradeStatus)){
-            order.setPaymentTime(DateFormat.getDateTimeInstance().parse(params.get("gmt_payment")));
+            order.setPaymentTime(DateTimeUtil.strToDate(params.get("gmt_payment")));
             order.setStatus(Const.OrderStatusEnum.PAID.getCode());
             orderMapper.updateByPrimaryKeySelective(order);
         }

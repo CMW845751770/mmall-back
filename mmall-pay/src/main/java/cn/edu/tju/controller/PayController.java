@@ -84,12 +84,7 @@ public class PayController {
         }
         //todo 验证各种数据
         //
-        ServerResponse serverResponse = null;
-        try {
-            serverResponse = payServiceImpl.aliCallback(params);
-        } catch (ParseException e) {
-            log.error("日期转化错误");
-        }
+        ServerResponse  serverResponse = payServiceImpl.aliCallback(params);
         if (serverResponse.isSuccess()) {
             return Const.AlipayCallback.RESPONSE_SUCCESS;
         }
