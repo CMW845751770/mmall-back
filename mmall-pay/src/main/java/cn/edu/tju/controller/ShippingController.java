@@ -9,10 +9,7 @@ import cn.edu.tju.service.ShippingService;
 import org.apache.catalina.Server;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sun.applet.Main;
 
 import javax.annotation.Resource;
@@ -38,7 +35,7 @@ public class ShippingController {
     }
 
     @RequestMapping("add.do")
-    public ServerResponse add(String userKey, Shipping shipping){
+    public ServerResponse add(String userKey, @RequestBody Shipping shipping){
         Integer userId = isUserLogin(userKey) ;
         if(userId != null && !userId.equals(Const.USER_NOT_ONLINE)){
             return shippingServiceImpl.add(userId,shipping) ;
@@ -56,7 +53,7 @@ public class ShippingController {
     }
 
     @RequestMapping("update.do")
-    public ServerResponse update(String userKey , Shipping shipping){
+    public ServerResponse update(String userKey ,@RequestBody Shipping shipping){
         Integer userId = isUserLogin(userKey) ;
         if(userId != null && !userId.equals(Const.USER_NOT_ONLINE)){
             return shippingServiceImpl.update(userId,shipping) ;

@@ -23,6 +23,9 @@ zuul:
     cart:
       path: /mmall-cart/**
       serviceId: cart
+    pay:
+      path: /mmall-pay/**
+      serviceId: pay
       strip-prefix: false
   sensitive-headers:
 logging:
