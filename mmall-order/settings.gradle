@@ -1,0 +1,3 @@
+rootProject.name = 'mmall-order'
+
+includeFlat('mmall-commons')
