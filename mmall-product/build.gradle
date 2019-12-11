@@ -24,8 +24,11 @@ ext {
 
 dependencies {
     compile project(":mmall-commons")
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp', version: '2.1.2.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     compileOnly 'org.projectlombok:lombok'

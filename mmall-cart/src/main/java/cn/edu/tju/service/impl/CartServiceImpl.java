@@ -105,7 +105,7 @@ public class CartServiceImpl implements CartService {
                     }
                 }
                 if(cart.getChecked() == Const.Cart.CHECKED){
-                    cartVoTotalPrice = ArithUtil.add(cartVoTotalPrice.doubleValue() , product.getPrice().doubleValue()) ;
+                    cartVoTotalPrice = ArithUtil.add(cartVoTotalPrice.doubleValue() ,cartProductVo.getProductTotalPrice().doubleValue()) ;
                 }
                 cartProductVoList.add(cartProductVo) ;
             }

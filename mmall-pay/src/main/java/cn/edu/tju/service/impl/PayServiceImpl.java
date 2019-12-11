@@ -70,6 +70,9 @@ public class PayServiceImpl implements PayService {
         if(order == null){
             return ServerResponse.createByErrorMessage("用户没有该订单");
         }
+        if(order.getStatus() != Const.OrderStatusEnum.NO_PAY.getCode()){
+            return ServerResponse.createByErrorMessage("订单状态异常");
+        }
         resultMap.put("orderNo",String.valueOf(order.getOrderNo()));
         // (必填) 商户网站订单系统中唯一订单号，64个字符以内，只能包含字母、数字、下划线，
         // 需保证商户系统端不能重复，建议通过数据库sequence生成，

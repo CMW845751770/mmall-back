@@ -1,14 +1,24 @@
 package cn.edu.tju.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-/**
- *
- */
-public class OrderVo {
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
+public class OrderVo implements Serializable {
 
+    private static final long serialVersionUID = 7060696591291601318L;
     private Long orderNo;
 
     private BigDecimal payment;

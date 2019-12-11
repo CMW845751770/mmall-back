@@ -11,13 +11,15 @@ repositories {
 }
 
 dependencies {
+    compileOnly("org.projectlombok:lombok:1.16.16")
+    annotationProcessor 'org.projectlombok:lombok:1.16.16'
     compile ('com.github.pagehelper:pagehelper-spring-boot-starter:1.2.10'){
-
-//excluding a particular transitive dependency:
         exclude group: 'org.mybatis.spring.boot' //by group
         exclude group: 'org.springframework.boot' //by group
     }
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0'
     compile group: 'joda-time', name: 'joda-time', version: '2.3'
     compile group: 'commons-net', name: 'commons-net', version: '3.1'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.7.RELEASE'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.9.RELEASE'
 }

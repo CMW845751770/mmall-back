@@ -1,0 +1,29 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/CMW845751770/config-repo.git
+          username: CMW845751770
+          password: 18659906596Ab
+  rabbitmq:
+    host: 47.101.33.252
+    username: guest
+    password: guest
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+#      defaultZone: http://soufun-eureka:8000/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

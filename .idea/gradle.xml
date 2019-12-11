@@ -38,6 +38,17 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-config" />
+        <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/mmall-config" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-consumer" />
         <option name="gradleHome" value="D:/gradle/soft/gradle-5.2.1" />
         <option name="modules">

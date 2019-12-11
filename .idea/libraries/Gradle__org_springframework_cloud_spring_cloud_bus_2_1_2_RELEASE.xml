@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-bus:2.1.2.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-bus/2.1.2.RELEASE/bdf8c0b813bbe2ea9c094dfc0d1afaed98ad6195/spring-cloud-bus-2.1.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-bus/2.1.2.RELEASE/c1db0a295a417106802eb439f0e77417ebe3a833/spring-cloud-bus-2.1.2.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

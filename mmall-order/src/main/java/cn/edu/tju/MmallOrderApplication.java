@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @EnableEurekaClient
 @EnableDiscoveryClient
-@MapperScan("Cn.edu.tju.mapper")
+@MapperScan("cn.edu.tju.mapper")
 @SpringBootApplication
 public class MmallOrderApplication {
 

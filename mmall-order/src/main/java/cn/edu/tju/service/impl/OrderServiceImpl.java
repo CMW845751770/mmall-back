@@ -6,22 +6,23 @@ import cn.edu.tju.commons.ServerResponse;
 import cn.edu.tju.mapper.*;
 import cn.edu.tju.pojo.*;
 import cn.edu.tju.service.OrderService;
-import cn.edu.tju.utils.ArithUtil;
-import cn.edu.tju.utils.DateTimeUtil;
-import cn.edu.tju.utils.Pojo2VoUtils;
-import cn.edu.tju.utils.PropertiesUtil;
+import cn.edu.tju.utils.*;
 import cn.edu.tju.vo.OrderItemVo;
 import cn.edu.tju.vo.OrderProductVo;
 import cn.edu.tju.vo.OrderVo;
 import cn.edu.tju.vo.ShippingVo;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ import java.util.Random;
 
 @Service
 @Transactional
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
     @Resource
@@ -41,6 +43,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderMapper orderMapper ;
     @Resource
     private OrderItemMapper orderItemMapper ;
+    @Resource
+    private AmqpTemplate amqpTemplate ;
     //生成订单号的方法
     private long generateOrderNo(){
         long currentTime =System.currentTimeMillis();
@@ -95,7 +99,7 @@ public class OrderServiceImpl implements OrderService {
         order.setUserId(userId);
         order.setShippingId(shippingId);
         order.setPaymentType(Const.PaymentTypeEnum.ONLINE_PAY.getCode());
-        order.setStatus(Const.OrderStatusEnum.NO_PAY.getCode());
+        order.setStatus(Const.OrderStatusEnum.WAITING.getCode());//订单状态默认为排队中,等待异步通知修改状态
         order.setPostage(0);
         //插入订单
         int rows = orderMapper.insert(order);
@@ -107,14 +111,17 @@ public class OrderServiceImpl implements OrderService {
             orderItem.setOrderNo(order.getOrderNo());
         }
         orderItemMapper.insertBatch(orderItemList) ;
-        //扣库存
-        for(OrderItem orderItem : orderItemList){
+        //扣库存 -》 异步扣库存
+        /*for(OrderItem orderItem : orderItemList){
             Product product = productMapper.selectByPrimaryKey(orderItem.getProductId()) ;
             if(product != null ){
                 product.setStock(product.getStock() - orderItem.getQuantity());
                 productMapper.updateByPrimaryKeySelective(product) ;
             }
-        }
+        }*/
+        String orderItemListStr = JacksonUtil.bean2Json(orderItemList) ;
+        log.info("异步扣库存,发送消息{}",orderItemListStr );
+        amqpTemplate.convertAndSend(Const.DECREASE_STOCK_MESSAGE_ROUTING_KEY,orderItemListStr);
         //清空购物车
         for(Cart cart : cartList){
             cartMapper.deleteByPrimaryKey(cart.getId()) ;
@@ -245,6 +252,20 @@ public class OrderServiceImpl implements OrderService {
         }
         PageInfo pi= new PageInfo(orderVoList) ;
         return ServerResponse.createBySuccess(pi) ;
+    }
+
+    @Override
+    public void updateOrderStatus(String responseStr) {
+        ServerResponse serverResponse = JacksonUtil.json2BeanT(responseStr, new TypeReference<ServerResponse<Long>>() {
+        })  ;
+        Order updateOrder = new Order() ;
+        updateOrder.setOrderNo((Long) serverResponse.getData());
+        if(serverResponse.getMsg().equals( ResponseCode.SUCCESS.getDesc())){
+            updateOrder.setStatus(Const.OrderStatusEnum.NO_PAY.getCode());
+        }else {
+            updateOrder.setStatus(Const.OrderStatusEnum.CANCELED.getCode());
+        }
+        orderMapper.updateByOrderNoSelective(updateOrder) ;
     }
 
 }

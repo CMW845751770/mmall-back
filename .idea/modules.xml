@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-config.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-config.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-config.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-config.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-config.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.test.iml" />

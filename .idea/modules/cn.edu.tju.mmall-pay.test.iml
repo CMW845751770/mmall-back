@@ -24,15 +24,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../mmall-pay/lib/alipay-trade-sdk-20161215-source.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../mmall-pay/lib/alipay-trade-sdk-20161215.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -43,6 +34,15 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../mmall-pay/lib/alipay-sdk-java20161213173952.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../mmall-pay/lib/alipay-trade-sdk-20161215-source.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

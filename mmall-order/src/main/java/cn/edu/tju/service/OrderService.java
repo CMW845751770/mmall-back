@@ -14,4 +14,6 @@ public interface OrderService {
     ServerResponse detail(Integer userId, Long orderNo);
 
     ServerResponse list(Integer userId, int pageNum, int pageSize);
+
+    void updateOrderStatus(String responseStr) ;
 }

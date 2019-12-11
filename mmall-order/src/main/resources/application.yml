@@ -7,7 +7,7 @@ spring:
     name: order
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://49.232.46.23:3306/mmall?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/mmall?serverTimezone=UTC
     username: root
     password: root
   redis:
@@ -15,10 +15,14 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  rabbitmq:
+    host: 49.232.46.23
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
-            defaultZone: http://localhost:8000/eureka/
+        defaultZone: http://localhost:8000/eureka/
 #      defaultZone: http://mmall-eureka:8000/eureka/
   instance:
     prefer-ip-address: true

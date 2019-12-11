@@ -17,6 +17,8 @@ public class Const {
     public static final String REDIS_CATEGORY_KEY_PREFIX = "category_key_" ;
 
     public static final Integer USER_NOT_ONLINE = -1 ;
+
+    public static final String DECREASE_STOCK_MESSAGE_ROUTING_KEY = "decrease_stock_message_key" ;
     public interface ROLE{
         int ROLE_CUSTOMER = 0 ;
         int ROLE_ADMIN = 1 ;
@@ -48,6 +50,7 @@ public class Const {
 
     public enum OrderStatusEnum{
         CANCELED(0,"已取消"),
+        WAITING(5,"排队等候中"),
         NO_PAY(10,"未支付"),
         PAID(20,"已付款"),
         SHIPPED(40,"已发货"),

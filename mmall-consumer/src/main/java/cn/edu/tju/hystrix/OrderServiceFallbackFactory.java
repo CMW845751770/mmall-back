@@ -20,6 +20,31 @@ public class OrderServiceFallbackFactory implements FallbackFactory<OrderService
             public ServerResponse<Boolean> queryOrderPayStatus(String userKey, Long orderNo) {
                 return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
             }
+
+            @Override
+            public ServerResponse create(String userKey, Integer shippingId) {
+                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
+            }
+
+            @Override
+            public ServerResponse cancel(String userKey, Long orderNo) {
+                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
+            }
+
+            @Override
+            public ServerResponse getOrderCartProduct(String userKey) {
+                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
+            }
+
+            @Override
+            public ServerResponse detail(String userKey, Long orderNo) {
+                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
+            }
+
+            @Override
+            public ServerResponse list(String userKey, int pageNum, int pageSize) {
+                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
+            }
         } ;
     }
 }

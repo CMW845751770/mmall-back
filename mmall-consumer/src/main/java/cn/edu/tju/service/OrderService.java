@@ -14,4 +14,18 @@ public interface OrderService {
     @RequestMapping("/mmall-pay/pay/query_order_pay_status.do")
     ServerResponse<Boolean> queryOrderPayStatus(@RequestParam("userKey") String userKey, @RequestParam("orderNo") Long orderNo) ;
 
+    @RequestMapping("/mmall-order/order/create.do")
+    ServerResponse create(@RequestParam("userKey")String userKey,@RequestParam("shippingId") Integer shippingId);
+
+    @RequestMapping("/mmall-order/order/cancel.do")
+    ServerResponse cancel(@RequestParam("userKey")String userKey,@RequestParam("orderNo") Long orderNo)  ;
+
+    @RequestMapping("/mmall-order/order/get_order_cart_product.do")
+    ServerResponse getOrderCartProduct(@RequestParam("userKey") String userKey) ;
+
+    @RequestMapping("/mmall-order/order/detail.do")
+    ServerResponse detail(@RequestParam("userKey") String userKey,@RequestParam("orderNo") Long orderNo) ;
+
+    @RequestMapping("/mmall-order/order/list.do")
+    ServerResponse list(@RequestParam("userKey") String userKey, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum, @RequestParam(value = "pageSize",defaultValue = "10") int pageSize) ;
 }

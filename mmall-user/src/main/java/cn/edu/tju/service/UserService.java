@@ -1,18 +1,23 @@
 package cn.edu.tju.service;
 
 import cn.edu.tju.commons.ServerResponse;
+import cn.edu.tju.form.UserForm;
+import cn.edu.tju.form.UserUpdateForm;
 import cn.edu.tju.pojo.User;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 public interface UserService {
-    ServerResponse<User> login(String username , String password) ;
+    ServerResponse login(String username , String password, HttpServletResponse response) ;
 
-    ServerResponse<User> register(User user) ;
+    ServerResponse logout(HttpServletRequest request,HttpServletResponse response) ;
 
-    boolean deleteUser(String key) ;
+    ServerResponse register(UserForm user) ;
 
     ServerResponse checkValid(String str , String type) ;
 
-    User getUserInfo(String key) ;
+    ServerResponse getUserInfo(String key) ;
 
     ServerResponse getUserQuestion(String username) ;
 
@@ -20,9 +25,9 @@ public interface UserService {
 
     ServerResponse forgetResetPassword(String username , String passwordNew ,String forgetToken) ;
 
-    ServerResponse resetPassword(String passwordOld, String passwordNew,User user) ;
+    ServerResponse resetPassword(String passwordOld, String passwordNew,String userKey) ;
 
-    ServerResponse updateUserInformation(User user) ;
+    ServerResponse updateUserInformation(UserUpdateForm user, String userKey) ;
 
-    ServerResponse<User> getInformation(Integer id);
+    ServerResponse getInformation(String userKey);
 }

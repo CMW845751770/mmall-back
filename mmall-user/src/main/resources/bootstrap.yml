@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG
+        enabled: true
+  profiles:
+    active: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+#      defaultZone: http://mmall-eureka:8000/eureka/
+  instance:
+    prefer-ip-address: true
