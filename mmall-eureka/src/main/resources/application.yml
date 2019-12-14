@@ -8,7 +8,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     instance:
-      hostname: caimingwei.xyz
+      hostname: localhost
     service-url:
       defaultZone: http://${eureka.client.instance.hostname}:${server.port}/eureka/
 #---

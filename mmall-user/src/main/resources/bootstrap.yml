@@ -12,6 +12,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://mmall-eureka:8000/eureka/
-      #defaultZone: http://caimingwei.xyz:8000/eureka/
   instance:
     prefer-ip-address: true

@@ -7,11 +7,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/CMW845751770/config-repo.git
-          username: CMW845751770
-          password: 18659906596Ab
+          uri: your github uri
+          username: your github username
+          password: your github password
   rabbitmq:
-    host: 47.101.33.252
+    host: your rabbitmq server ip
     username: guest
     password: guest
 eureka:
