@@ -5,15 +5,15 @@ import cn.edu.tju.vo.CartVo;
 
 public interface CartService {
 
-    ServerResponse<CartVo> add(Integer userId , Integer count, Integer productId) ;
+    ServerResponse add(String userKey,Integer productId ,Integer count) ;
 
-    ServerResponse<CartVo> list(Integer userId) ;
+    ServerResponse list(String userKey) ;
 
-    ServerResponse<CartVo> update(Integer userId, Integer productId, Integer count);
+    ServerResponse update(String userKey, Integer count, Integer productId);
 
-    ServerResponse<CartVo> deleteProduct(Integer userId, String productIds);
+    ServerResponse deleteProduct(String userKey, String productIds);
 
-    ServerResponse<CartVo> selectOrUnselect(Integer userId, Integer checked, Integer productId);
+    ServerResponse selectOrUnselect(String userKey, Integer checked, Integer productId);
 
-    ServerResponse<Integer> selectCartProductCount(Integer userId);
+    ServerResponse  selectCartProductCount(String userKey);
 }

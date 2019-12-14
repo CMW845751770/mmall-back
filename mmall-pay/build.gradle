@@ -27,13 +27,16 @@ dependencies {
     compile fileTree(dir:'lib',include:['*.jar'])
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile group: 'com.google.zxing', name: 'core', version: '2.1'
+    annotationProcessor 'org.projectlombok:lombok:1.16.16'
+    compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.10'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp', version: '2.1.2.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

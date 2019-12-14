@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG
+        enabled: true
+  profiles:
+    active: online
+eureka:
+  client:
+    service-url:
+      defaultZone: http://caimingwei.xyz:8000/eureka/
+  instance:
+    prefer-ip-address: true

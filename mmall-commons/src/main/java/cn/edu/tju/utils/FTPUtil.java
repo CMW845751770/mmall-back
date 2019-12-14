@@ -25,9 +25,9 @@ public class FTPUtil {
     }
     public static boolean uploadFile(List<File> fileList) throws IOException {
         FTPUtil ftpUtil = new FTPUtil(ftpIp,21,ftpUser,ftpPass);
-        logger.info("å¼€å§‹è¿æ¥ftpæœåŠ¡å™¨");
+        logger.info("¿ªÊ¼Á¬½Óftp·şÎñÆ÷");
         boolean result = ftpUtil.uploadFile("/home/ftpuser/",fileList);
-        logger.info("å¼€å§‹è¿æ¥ftpæœåŠ¡å™¨,ç»“æŸä¸Šä¼ ,ä¸Šä¼ ç»“æœ:{}",result);
+        logger.info("¿ªÊ¼Á¬½Óftp·şÎñÆ÷,½áÊøÉÏ´«,ÉÏ´«½á¹û:{}",result);
         return result;
     }
 
@@ -35,7 +35,7 @@ public class FTPUtil {
     private boolean uploadFile(String remotePath,List<File> fileList) throws IOException {
         boolean uploaded = true;
         FileInputStream fis = null;
-        //è¿æ¥FTPæœåŠ¡å™¨
+        //Á¬½ÓFTP·şÎñÆ÷
         if(connectServer(this.ip,this.port,this.user,this.pwd)){
             try {
                 ftpClient.changeWorkingDirectory(remotePath);
@@ -49,7 +49,7 @@ public class FTPUtil {
                 }
 
             } catch (IOException e) {
-                logger.error("ä¸Šä¼ æ–‡ä»¶å¼‚å¸¸",e);
+                logger.error("ÉÏ´«ÎÄ¼şÒì³£",e);
                 uploaded = false;
                 e.printStackTrace();
             } finally {
@@ -70,7 +70,7 @@ public class FTPUtil {
             ftpClient.connect(ip);
             isSuccess = ftpClient.login(user,pwd);
         } catch (IOException e) {
-            logger.error("è¿æ¥FTPæœåŠ¡å™¨å¼‚å¸¸",e);
+            logger.error("Á¬½ÓFTP·şÎñÆ÷Òì³£",e);
         }
         return isSuccess;
     }

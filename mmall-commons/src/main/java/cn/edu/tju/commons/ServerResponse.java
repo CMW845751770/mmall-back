@@ -7,12 +7,12 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.Serializable;
 
 /**
- * å¯å¤ç”¨çš„æœåŠ¡å™¨å“åº”
+ * ¿É¸´ÓÃµÄ·şÎñÆ÷ÏìÓ¦
  * @param <T>
  */
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 //@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-//ä¿è¯åºåˆ—åŒ–jsonçš„æ—¶å€™,å¦‚æœæ˜¯nullçš„å¯¹è±¡,keyä¹Ÿä¼šæ¶ˆå¤±
+//±£Ö¤ĞòÁĞ»¯jsonµÄÊ±ºò,Èç¹ûÊÇnullµÄ¶ÔÏó,keyÒ²»áÏûÊ§
 public class ServerResponse<T> implements Serializable {
 
     private int status;
@@ -41,7 +41,7 @@ public class ServerResponse<T> implements Serializable {
     }
 
     @JsonIgnore
-    //ä½¿ä¹‹ä¸åœ¨jsonåºåˆ—åŒ–ç»“æœå½“ä¸­
+    //Ê¹Ö®²»ÔÚjsonĞòÁĞ»¯½á¹ûµ±ÖĞ
     public boolean isSuccess(){
         return this.status == ResponseCode.SUCCESS.getCode();
     }

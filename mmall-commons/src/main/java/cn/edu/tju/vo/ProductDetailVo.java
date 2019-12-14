@@ -29,5 +29,7 @@ public class ProductDetailVo implements Serializable {
     private Integer status;
     private String createTime;
     private String updateTime;
+    private String imageHost;
+    private Integer parentCategoryId;
 
 }

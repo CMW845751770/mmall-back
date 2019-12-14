@@ -6,6 +6,12 @@ group = 'cn.edu.tju'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+configurations {
+    compileOnly { //仅在编译时依赖，此处为lombok使用，相关注解在编译时生成getter、setter等
+        extendsFrom annotationProcessor
+    }
+}
+
 repositories {
     mavenCentral()
 }

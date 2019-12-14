@@ -33,5 +33,4 @@ public class UserVO implements Serializable {
 
     private String answer;
 
-//    private Integer role;
 }

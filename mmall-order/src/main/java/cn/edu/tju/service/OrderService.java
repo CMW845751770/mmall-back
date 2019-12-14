@@ -5,15 +5,15 @@ import cn.edu.tju.vo.OrderVo;
 
 public interface OrderService {
 
-    ServerResponse<OrderVo> create(Integer userId , Integer shippingId) ;
+    ServerResponse create(String userKey , Integer shippingId) ;
 
-    ServerResponse cancel(Integer userId, Long orderNo);
+    ServerResponse cancel(String userKey, Long orderNo);
 
-    ServerResponse getOrderCartProduct(Integer userId);
+    ServerResponse getOrderCartProduct(String userKey);
 
-    ServerResponse detail(Integer userId, Long orderNo);
+    ServerResponse detail(String userKey, Long orderNo);
 
-    ServerResponse list(Integer userId, int pageNum, int pageSize);
+    ServerResponse list(String userKey, int pageNum, int pageSize);
 
-    void updateOrderStatus(String responseStr) ;
+    void updateOrderStatus(Long orderNo) ;
 }

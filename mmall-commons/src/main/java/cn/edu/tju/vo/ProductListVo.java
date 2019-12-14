@@ -24,8 +24,6 @@ public class ProductListVo implements Serializable {
     private String subtitle;
     private String mainImage;
     private BigDecimal price;
-
     private Integer status;
-
     private String imageHost;
 }

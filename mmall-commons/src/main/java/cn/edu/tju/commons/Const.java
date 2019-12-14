@@ -1,7 +1,7 @@
 package cn.edu.tju.commons;
 
 /**
- * Created by geely
+ *
  */
 public class Const {
 
@@ -11,27 +11,29 @@ public class Const {
     public static final String USERNAME = "username" ;
 
     public static final String TOKEN_PREFIX = "token_" ;
-    public static final int TOKEN_EXPIRES_TIME = 30 ; //åˆ†é’Ÿ
+    public static final int TOKEN_EXPIRES_TIME = 30 ; //·ÖÖÓ
 
-    public static final int DEFAULT_REDIS_SAVE_TIME = 10 ;//åˆ†é’Ÿ
+    public static final int DEFAULT_REDIS_SAVE_TIME = 10 ;//·ÖÖÓ
     public static final String REDIS_CATEGORY_KEY_PREFIX = "category_key_" ;
 
     public static final Integer USER_NOT_ONLINE = -1 ;
 
     public static final String DECREASE_STOCK_MESSAGE_ROUTING_KEY = "decrease_stock_message_key" ;
+    public static final int RATE_LIMIT_TOKENS = 20;
+
     public interface ROLE{
         int ROLE_CUSTOMER = 0 ;
         int ROLE_ADMIN = 1 ;
     }
     public interface Cart{
-        int CHECKED = 1;//å³è´­ç‰©è½¦é€‰ä¸­çŠ¶æ€
-        int UN_CHECKED = 0;//è´­ç‰©è½¦ä¸­æœªé€‰ä¸­çŠ¶æ€
+        int CHECKED = 1;//¼´¹ºÎï³µÑ¡ÖĞ×´Ì¬
+        int UN_CHECKED = 0;//¹ºÎï³µÖĞÎ´Ñ¡ÖĞ×´Ì¬
 
         String LIMIT_NUM_FAIL = "LIMIT_NUM_FAIL";
         String LIMIT_NUM_SUCCESS = "LIMIT_NUM_SUCCESS";
     }
     public enum ProductStatusEnum{
-        ON_SALE(1,"åœ¨çº¿");
+        ON_SALE(1,"ÔÚÏß");
         private String value;
         private int code;
         ProductStatusEnum(int code,String value){
@@ -49,13 +51,13 @@ public class Const {
     }
 
     public enum OrderStatusEnum{
-        CANCELED(0,"å·²å–æ¶ˆ"),
-        WAITING(5,"æ’é˜Ÿç­‰å€™ä¸­"),
-        NO_PAY(10,"æœªæ”¯ä»˜"),
-        PAID(20,"å·²ä»˜æ¬¾"),
-        SHIPPED(40,"å·²å‘è´§"),
-        ORDER_SUCCESS(50,"è®¢å•å®Œæˆ"),
-        ORDER_CLOSE(60,"è®¢å•å…³é—­");
+        CANCELED(0,"ÒÑÈ¡Ïû"),
+        WAITING(5,"ÅÅ¶ÓµÈºòÖĞ"),
+        NO_PAY(10,"Î´Ö§¸¶"),
+        PAID(20,"ÒÑ¸¶¿î"),
+        SHIPPED(40,"ÒÑ·¢»õ"),
+        ORDER_SUCCESS(50,"¶©µ¥Íê³É"),
+        ORDER_CLOSE(60,"¶©µ¥¹Ø±Õ");
 
 
         OrderStatusEnum(int code,String value){
@@ -79,7 +81,7 @@ public class Const {
                     return orderStatusEnum;
                 }
             }
-            throw new RuntimeException("ä¹ˆæœ‰æ‰¾åˆ°å¯¹åº”çš„æšä¸¾");
+            throw new RuntimeException("Ã´ÓĞÕÒµ½¶ÔÓ¦µÄÃ¶¾Ù");
         }
     }
     public interface  AlipayCallback{
@@ -93,7 +95,7 @@ public class Const {
 
 
     public enum PayPlatformEnum{
-        ALIPAY(1,"æ”¯ä»˜å®");
+        ALIPAY(1,"Ö§¸¶±¦");
 
         PayPlatformEnum(int code,String value){
             this.code = code;
@@ -112,7 +114,7 @@ public class Const {
     }
 
     public enum PaymentTypeEnum{
-        ONLINE_PAY(1,"åœ¨çº¿æ”¯ä»˜");
+        ONLINE_PAY(1,"ÔÚÏßÖ§¸¶");
 
         PaymentTypeEnum(int code,String value){
             this.code = code;
@@ -136,7 +138,7 @@ public class Const {
                     return paymentTypeEnum;
                 }
             }
-            throw new RuntimeException("ä¹ˆæœ‰æ‰¾åˆ°å¯¹åº”çš„æšä¸¾");
+            throw new RuntimeException("Ã»ÓĞÕÒµ½¶ÔÓ¦µÄÃ¶¾Ù");
         }
 
     }

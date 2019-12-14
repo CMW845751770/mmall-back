@@ -8,13 +8,13 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "zuul" ,fallbackFactory = ProductServiceFallBackFactory.class)
+@FeignClient(value = "product" ,fallbackFactory = ProductServiceFallBackFactory.class)
 public interface ProductService {
 
-    @RequestMapping(value = "/mmall-product/product/detail.do")
+    @RequestMapping(value = "/product/detail.do")
     ServerResponse<ProductDetailVo> detail(@RequestParam("productId")Integer productId)  ;
 
-    @RequestMapping(value = "/mmall-product/product/list.do")
+    @RequestMapping(value = "/product/list.do")
     ServerResponse<PageInfo> list(@RequestParam(value = "keyword",required = false)String keyword,
                                          @RequestParam(value = "categoryId",required = false)Integer categoryId,
                                          @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,

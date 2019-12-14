@@ -22,15 +22,6 @@ public class OrderController {
     @Resource
     private OrderService orderService ;
 
-    @RequestMapping("pay.do")
-    public ServerResponse pay(@CookieValue(value = Const.CURRENT_USER,defaultValue = StringUtils.EMPTY)String userKey, Long orderNo) {
-        return orderService.pay(userKey,orderNo) ;
-    }
-
-    @RequestMapping("query_order_pay_status.do")
-    public ServerResponse<Boolean> queryOrderPayStatus(@CookieValue(value = Const.CURRENT_USER,defaultValue = StringUtils.EMPTY)String userKey, Long orderNo) {
-        return orderService.queryOrderPayStatus(userKey,orderNo) ;
-    }
 
     @RequestMapping("create.do")
     public ServerResponse create(@CookieValue(value = Const.CURRENT_USER,defaultValue = StringUtils.EMPTY)String userKey, Integer shippingId){

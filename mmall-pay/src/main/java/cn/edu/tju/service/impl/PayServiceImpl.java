@@ -66,7 +66,7 @@ public class PayServiceImpl implements PayService {
     @Override
     public ServerResponse pay(Long orderNo, Integer userId, String path) {
         Map<String ,String> resultMap = Maps.newHashMap();
-        Order order = orderMapper.selectByUserIdAndOrderNo(userId,orderNo);
+        Order order = orderMapper.selectByOrderNoUserId(orderNo,userId);
         if(order == null){
             return ServerResponse.createByErrorMessage("用户没有该订单");
         }
@@ -101,7 +101,7 @@ public class PayServiceImpl implements PayService {
         String timeoutExpress = "120m";
         // 商品明细列表，需填写购买商品详细信息，
         List<GoodsDetail> goodsDetailList = new ArrayList<GoodsDetail>();
-        List<OrderItem> orderItemList = orderItemMapper.getByOrderNoUserId(orderNo,userId);
+        List<OrderItem> orderItemList = orderItemMapper.selOrderItemListByOrderNoUserId(orderNo,userId);
         for(OrderItem orderItem : orderItemList){
             GoodsDetail goods = GoodsDetail.newInstance(orderItem.getProductId().toString(), orderItem.getProductName(),
                     ArithUtil.mul(orderItem.getCurrentUnitPrice().doubleValue(),new Double(100).doubleValue()).longValue(),
@@ -202,7 +202,7 @@ public class PayServiceImpl implements PayService {
 
     @Override
     public ServerResponse queryOrderPayStatus(Integer userId, Long orderNo) {
-        Order order = orderMapper.selectByUserIdAndOrderNo(userId,orderNo);
+        Order order = orderMapper.selectByOrderNoUserId(orderNo,userId);
         if(order == null){
             return ServerResponse.createByErrorMessage("用户没有该订单");
         }

@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author: CMWå¤©ä¸‹ç¬¬ä¸€
+ * @Author: CMWÌìÏÂµÚÒ»
  */
 @Data
 @ToString
@@ -23,23 +23,23 @@ public class UserForm implements Serializable {
 
     private static final long serialVersionUID = -8574209714158944906L;
 
-    @NotBlank(message = "ç”¨æˆ·åä¸èƒ½ä¸ºç©º")
+    @NotBlank(message = "ÓÃ»§Ãû²»ÄÜÎª¿Õ")
     private String username;
 
-    @NotBlank(message = "å¯†ç ä¸èƒ½ä¸ºç©º")
+    @NotBlank(message = "ÃÜÂë²»ÄÜÎª¿Õ")
     private String password;
 
-    @NotBlank(message="é‚®ç®±ä¸èƒ½ä¸ºç©º")
-    @Email(message = "ä¸æ”¯æŒçš„é‚®ç®±æ ¼å¼")
+    @NotBlank(message="ÓÊÏä²»ÄÜÎª¿Õ")
+    @Email(message = "²»Ö§³ÖµÄÓÊÏä¸ñÊ½")
     private String email;
 
-    @NotBlank(message = "æ‰‹æœºå·ä¸èƒ½ä¸ºç©º")
-    @Pattern(regexp = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$" ,message = "ä¸æ”¯æŒçš„æ‰‹æœºå·æ ¼å¼")
+    @NotBlank(message = "ÊÖ»úºÅ²»ÄÜÎª¿Õ")
+    @Pattern(regexp = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$" ,message = "²»Ö§³ÖµÄÊÖ»úºÅ¸ñÊ½")
     private String phone;
 
-    @NotBlank(message = "å¯†ç æç¤ºé—®é¢˜ä¸èƒ½ä¸ºç©º")
+    @NotBlank(message = "ÃÜÂëÌáÊ¾ÎÊÌâ²»ÄÜÎª¿Õ")
     private String question;
 
-    @NotBlank(message = "å¯†ç æç¤ºç­”æ¡ˆä¸èƒ½ä¸ºç©º")
+    @NotBlank(message = "ÃÜÂëÌáÊ¾´ğ°¸²»ÄÜÎª¿Õ")
     private String answer;
 }

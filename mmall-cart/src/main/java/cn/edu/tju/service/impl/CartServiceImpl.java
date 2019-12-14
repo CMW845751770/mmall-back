@@ -9,10 +9,15 @@ import cn.edu.tju.pojo.Cart;
 import cn.edu.tju.pojo.Product;
 import cn.edu.tju.service.CartService;
 import cn.edu.tju.utils.ArithUtil;
+import cn.edu.tju.utils.JacksonUtil;
 import cn.edu.tju.utils.PropertiesUtil;
 import cn.edu.tju.vo.CartProductVo;
 import cn.edu.tju.vo.CartVo;
+import cn.edu.tju.vo.UserVO;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
@@ -30,20 +35,40 @@ public class CartServiceImpl implements CartService {
     private CartMapper cartMapper ;
     @Resource
     private ProductMapper productMapper ;
+    @Resource
+    private StringRedisTemplate stringRedisTemplate ;
+
+    //获取redis中的用户信息
+    private UserVO getUserVOInSession(String token){
+        if(StringUtils.isBlank(token)){
+            return null ;
+        }
+        String userJson = stringRedisTemplate.opsForValue().get(token) ;
+        if(StringUtils.isBlank(userJson)){
+            return null ;
+        }
+        UserVO userVO = JacksonUtil.json2Bean(userJson , UserVO.class) ;
+        return userVO ;
+    }
 
     @Override
-    public ServerResponse<CartVo> add(Integer userId, Integer count, Integer productId) {
+    @CacheEvict(cacheNames = "cart_list",allEntries = true)
+    public ServerResponse add(String userKey,Integer productId ,Integer count) {
+        UserVO user = getUserVOInSession(userKey);
+        if(user == null ){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc()) ;
+        }
         //判断参数是否正确
         if(count == null || productId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode()
                                             ,ResponseCode.ILLEGAL_ARGUMENT.getDesc()) ;
         }
-        Cart cart = cartMapper.selCartByUserIdAndProductId(userId,productId) ;
+        Cart cart = cartMapper.selCartByUserIdAndProductId(user.getId(),productId) ;
         if(cart == null ){
             Cart cartItem = new Cart() ;
             cartItem.setChecked(Const.Cart.CHECKED);
             cartItem.setProductId(productId);
-            cartItem.setUserId(userId);
+            cartItem.setUserId(user.getId());
             cartItem.setQuantity(count) ;
             int rows  = cartMapper.insert(cartItem) ;
             if( rows == 0 ){
@@ -55,16 +80,26 @@ public class CartServiceImpl implements CartService {
             cartMapper.updateByPrimaryKeySelective(cart) ;
         }
         //返回当前购物车中的状态
-        return list(userId);
+        return showCartList(user.getId());
     }
 
     @Override
-    public ServerResponse<CartVo> list(Integer userId) {
+    @Cacheable(cacheNames = "cart_list", unless = "#result.status ne 0")
+    public ServerResponse list(String userKey) {
         /**1.根据用户id查询出该用户的所有的加入购物车的商品Cart
          * 2.遍历CaetList 设置productVo对象属性
          * 3.将productVo对象加入到CartVo中
          * 4.设置cartVo对象属性
          */
+        UserVO user = getUserVOInSession(userKey);
+        if(user == null ){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc()) ;
+        }
+        return showCartList(user.getId()) ;
+    }
+
+
+    private ServerResponse showCartList(Integer userId){
         List<Cart> cartList = cartMapper.selCartListByUserId(userId) ;
         int unCheckedCount = cartMapper.selUnCheckedCountByUserId(userId) ;
         CartVo cartVo = new CartVo() ;
@@ -72,29 +107,29 @@ public class CartServiceImpl implements CartService {
         BigDecimal cartVoTotalPrice = new BigDecimal("0") ;
         for(Cart cart : cartList){
             CartProductVo cartProductVo = new CartProductVo() ;
-            cartProductVo.setId(cart.getId());
-            cartProductVo.setUserId(userId);
-            cartProductVo.setProductId(cart.getProductId());
-            cartProductVo.setProductChecked(cart.getChecked());
+            cartProductVo.setId(cart.getId())
+                         .setUserId(userId)
+                         .setProductId(cart.getProductId())
+                         .setProductChecked(cart.getChecked());
             //根据productId查出Product
             Product product = productMapper.selectByPrimaryKey(cart.getProductId());
             if(product != null ){
-                cartProductVo.setProductMainImage(product.getMainImage());
-                cartProductVo.setProductPrice(product.getPrice());
-                cartProductVo.setProductStatus(product.getStatus());
-                cartProductVo.setProductName(product.getName());
-                cartProductVo.setProductStock(product.getStock());
-                cartProductVo.setProductSubtitle(product.getSubtitle());
+                cartProductVo.setProductMainImage(product.getMainImage())
+                             .setProductPrice(product.getPrice())
+                             .setProductStatus(product.getStatus())
+                             .setProductName(product.getName())
+                             .setProductStock(product.getStock())
+                             .setProductSubtitle(product.getSubtitle());
                 if(product.getStock() >= cart.getQuantity()){
                     //库存足够
-                    cartProductVo.setQuantity(cart.getQuantity());
-                    cartProductVo.setLimitQuantity(Const.Cart.LIMIT_NUM_SUCCESS);
-                    cartProductVo.setProductTotalPrice(ArithUtil.mul(cart.getQuantity().doubleValue(),product.getPrice().doubleValue()));
+                    cartProductVo.setQuantity(cart.getQuantity())
+                                 .setLimitQuantity(Const.Cart.LIMIT_NUM_SUCCESS)
+                                 .setProductTotalPrice(ArithUtil.mul(cart.getQuantity().doubleValue(),product.getPrice().doubleValue()));
                 }else{
                     //库存不足
-                    cartProductVo.setQuantity(product.getStock());
-                    cartProductVo.setLimitQuantity(Const.Cart.LIMIT_NUM_FAIL);
-                    cartProductVo.setProductTotalPrice(ArithUtil.mul(product.getStock().doubleValue(),product.getPrice().doubleValue()));
+                    cartProductVo.setQuantity(product.getStock())
+                                 .setLimitQuantity(Const.Cart.LIMIT_NUM_FAIL)
+                                 .setProductTotalPrice(ArithUtil.mul(product.getStock().doubleValue(),product.getPrice().doubleValue()));
                     //更新购车数量信息
                     Cart cartUpdateForQuantity = new Cart() ;
                     cartUpdateForQuantity.setQuantity(product.getStock());
@@ -110,54 +145,72 @@ public class CartServiceImpl implements CartService {
                 cartProductVoList.add(cartProductVo) ;
             }
         }
-        cartVo.setCartTotalPrice(cartVoTotalPrice);
-        cartVo.setCartProductVoList(cartProductVoList);
-        cartVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix","http://img.happymmall.com/"));
-        cartVo.setAllChecked(unCheckedCount == 0);
+        cartVo.setCartTotalPrice(cartVoTotalPrice)
+              .setCartProductVoList(cartProductVoList)
+              .setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix","http://img.happymmall.com/"))
+              .setAllChecked(unCheckedCount == 0);
         return ServerResponse.createBySuccess(cartVo);
     }
 
     @Override
-    public ServerResponse<CartVo> update(Integer userId, Integer productId, Integer count) {
+    @CacheEvict(cacheNames = "cart_list",allEntries = true)
+    public ServerResponse update(String userKey, Integer count, Integer productId) {
+        UserVO user = getUserVOInSession(userKey);
+        if(user == null ){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc()) ;
+        }
         if(productId == null || count == null ){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc()) ;
         }
-        Cart cart = cartMapper.selCartByUserIdAndProductId(userId, productId);
+        Cart cart = cartMapper.selCartByUserIdAndProductId(user.getId(), productId);
         if(cart != null ){
             Cart cartItem = new Cart() ;
             cartItem.setQuantity(count) ;
             cartItem.setId(cart.getId());
             int rows = cartMapper.updateByPrimaryKeySelective(cartItem) ;
             if(rows > 0 ){
-                return list(userId) ;
+                return showCartList(user.getId()) ;
             }
         }
         return ServerResponse.createByErrorMessage("更新购物车商品数量失败")  ;
     }
 
     @Override
-    public ServerResponse<CartVo> deleteProduct(Integer userId, String productIds) {
+    @CacheEvict(cacheNames = "cart_list",allEntries = true)
+    public ServerResponse deleteProduct(String userKey, String productIds) {
+        UserVO user = getUserVOInSession(userKey);
+        if(user == null ){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc()) ;
+        }
         if(StringUtils.isBlank(productIds)){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc()) ;
         }
         List<String> productIdList = Arrays.asList(productIds.split(",")) ;
-        cartMapper.deleteByProductIdList(userId , productIdList) ;
-        return list(userId) ;
+        cartMapper.deleteByProductIdList(user.getId() , productIdList) ;
+        return showCartList(user.getId()) ;
     }
 
     @Override
-    public ServerResponse<CartVo> selectOrUnselect(Integer userId, Integer checked, Integer productId) {
+    public ServerResponse selectOrUnselect(String userKey, Integer checked, Integer productId) {
+        UserVO user = getUserVOInSession(userKey);
+        if(user == null ){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc()) ;
+        }
         //参数校验
         if(checked == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc()) ;
         }
-        cartMapper.updateByUserIdAndProductId(userId , checked , productId) ;
-        return list(userId) ;
+        cartMapper.updateByUserIdAndProductId(user.getId() , checked , productId) ;
+        return showCartList(user.getId()) ;
     }
 
     @Override
-    public ServerResponse<Integer> selectCartProductCount(Integer userId) {
-        Integer resultCount = cartMapper.selectCarProductCount(userId) ;
+    public ServerResponse selectCartProductCount(String userKey) {
+        UserVO user = getUserVOInSession(userKey);
+        if(user == null ){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc()) ;
+        }
+        Integer resultCount = cartMapper.selectCarProductCount(user.getId()) ;
         return ServerResponse.createBySuccess(resultCount) ;
     }
 

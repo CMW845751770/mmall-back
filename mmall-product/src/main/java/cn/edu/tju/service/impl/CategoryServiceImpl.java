@@ -1,19 +1,12 @@
 package cn.edu.tju.service.impl;
 
-import cn.edu.tju.commons.Const;
 import cn.edu.tju.commons.ServerResponse;
 import cn.edu.tju.mapper.CategoryMapper;
 import cn.edu.tju.pojo.Category;
-import cn.edu.tju.repository.CategoryRepository;
 import cn.edu.tju.service.CategoryService;
-import cn.edu.tju.utils.JacksonUtil;
-import com.fasterxml.jackson.core.type.TypeReference;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,26 +20,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Resource
     private CategoryMapper categoryMapper ;
 
-    @Resource
-    private CategoryRepository categoryRepositoryImpl ;
 
     @Override
-    @Cacheable(cacheNames = "category",key = "#categoryId")
+    @Cacheable(cacheNames = "categoryId_list", unless = "#result.status ne 0")
     public ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId) {
-        //先从redis中找
-       /* String categoryKey = Const.REDIS_CATEGORY_KEY_PREFIX + categoryId ;
-        String categorySetStr = categoryRepositoryImpl.getCategorySet(categoryKey);
-        Set<Category> categorySet = null ;
-        if(StringUtils.isBlank(categorySetStr )) //redis中没有
-        {
-            categorySet = new HashSet<>() ;
-            //从数据库中寻找
-            findChildCategory(categorySet, categoryId);
-            //存入redis中
-            categoryRepositoryImpl.saveCategorySet(categoryKey, JacksonUtil.bean2Json(categorySet));
-        }else {
-            categorySet =  JacksonUtil.json2BeanT(categorySetStr, new TypeReference<Set<Category>>() {}) ;
-        }*/
         Set<Category> categorySet = new HashSet<>() ;
         findChildCategory(categorySet, categoryId);
         List<Integer> categoryIdList = new ArrayList<>() ;

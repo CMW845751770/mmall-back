@@ -5,9 +5,7 @@ import cn.edu.tju.commons.ResponseCode;
 import cn.edu.tju.commons.ServerResponse;
 import cn.edu.tju.form.UserForm;
 import cn.edu.tju.form.UserUpdateForm;
-import cn.edu.tju.pojo.User;
 import cn.edu.tju.service.UserService;
-import cn.edu.tju.utils.Form2PojoUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -75,7 +73,8 @@ public class UserController {
     }
 
     @PostMapping("update_information.do")
-    public ServerResponse update_information(@RequestParam("userKey") String userKey, @Valid UserUpdateForm user, BindingResult result) {
+    public ServerResponse update_information(@RequestParam("userKey") String userKey, @Valid @RequestBody UserUpdateForm user, BindingResult result) {
+        log.info("user :{}",user);
         if(result.hasErrors()){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(),
                     result.getFieldError().getDefaultMessage()) ;

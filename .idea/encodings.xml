@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/Const.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/ResponseCode.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/ServerResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/ShippingForm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/UserForm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/UserUpdateForm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/ArithUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/CookieUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/FTPUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/Pojo2VOUtil.java" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
 </project>

@@ -1,6 +1,7 @@
 package cn.edu.tju.hystrix;
 
 import cn.edu.tju.commons.ServerResponse;
+import cn.edu.tju.form.UserUpdateForm;
 import cn.edu.tju.pojo.User;
 import cn.edu.tju.service.UserService;
 import feign.hystrix.FallbackFactory;
@@ -13,20 +14,6 @@ public class UserServiceFallbackFactory implements FallbackFactory<UserService> 
     @Override
     public UserService create(Throwable cause) {
         return new UserService() {
-            @Override
-            public ServerResponse login(String username, String password) {
-                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
-            }
-
-            @Override
-            public ServerResponse logout(String userKey) {
-                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
-            }
-
-            @Override
-            public ServerResponse register(User user) {
-                return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
-            }
 
             @Override
             public ServerResponse checkValid(String type, String str) {
@@ -59,7 +46,7 @@ public class UserServiceFallbackFactory implements FallbackFactory<UserService> 
             }
 
             @Override
-            public ServerResponse update_information(User user,String userKey) {
+            public ServerResponse update_information(UserUpdateForm user, String userKey) {
                 return ServerResponse.createByErrorMessage("降级服务提示：该服务暂时关闭");
             }
 

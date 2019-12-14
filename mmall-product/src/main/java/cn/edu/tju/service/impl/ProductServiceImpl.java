@@ -3,16 +3,19 @@ package cn.edu.tju.service.impl;
 import cn.edu.tju.commons.Const;
 import cn.edu.tju.commons.ResponseCode;
 import cn.edu.tju.commons.ServerResponse;
+import cn.edu.tju.exception.InadequateStockException;
 import cn.edu.tju.mapper.CategoryMapper;
 import cn.edu.tju.mapper.ProductMapper;
+import cn.edu.tju.message.producer.ModifyOrderStatusProducer;
 import cn.edu.tju.pojo.Category;
 import cn.edu.tju.pojo.OrderItem;
 import cn.edu.tju.pojo.Product;
 import cn.edu.tju.service.CategoryService;
 import cn.edu.tju.service.ProductService;
 import cn.edu.tju.utils.JacksonUtil;
-import cn.edu.tju.utils.Product2ProductDetailVoUtil;
+import cn.edu.tju.utils.Pojo2VOUtil;
 import cn.edu.tju.utils.Product2ProductListVoUtil;
+import cn.edu.tju.vo.OrderItemVo;
 import cn.edu.tju.vo.ProductListVo;
 import cn.edu.tju.vo.ProductDetailVo;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,11 +23,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
-
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +45,11 @@ public class ProductServiceImpl implements ProductService {
     @Resource
     private CategoryService categoryServiceImpl;
 
+    @Resource
+    private ModifyOrderStatusProducer modifyOrderStatusProducer ;
+
     @Override
+    @Cacheable(cacheNames = "product_detail", unless = "#result.status ne 0")
     public ServerResponse<ProductDetailVo> getProductDetail(Integer productId) {
         if (productId == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode()
@@ -57,13 +63,14 @@ public class ProductServiceImpl implements ProductService {
             return ServerResponse.createByErrorMessage("产品已下架或者删除");
         }
         //转换成ProductVo对象
-        ProductDetailVo productDetailVo = Product2ProductDetailVoUtil.product2ProductDetailVo(product);
+        ProductDetailVo productDetailVo = Pojo2VOUtil.product2ProductDetailVo(product);
         Category category = categoryMapper.selectByPrimaryKey(product.getCategoryId());
         productDetailVo.setParentCategoryId(category.getParentId());
         return ServerResponse.createBySuccess(productDetailVo);
     }
 
     @Override
+    @Cacheable(cacheNames = "product_list", unless = "#result.status ne 0")
     public ServerResponse<PageInfo> getProductByKeywordCategory(String keyword, Integer categoryId, int pageNum, int pageSize, String orderBy) {
         //如果keyword和categoryId同时为空
         if (StringUtils.isBlank(keyword) && categoryId == null) {
@@ -104,22 +111,27 @@ public class ProductServiceImpl implements ProductService {
         return ServerResponse.createBySuccess(pi);
     }
 
+    // 异步扣库存
     @Override
-    public ServerResponse decreaseStock(String orderItemListStr) {
-        List<OrderItem> orderItemList = JacksonUtil.json2BeanT(orderItemListStr, new TypeReference<List<OrderItem>>() {
-        });
-        Long orderNo = orderItemList.get(0).getOrderNo() ;
-        int rows = 0 ;
-        for (OrderItem orderItem : orderItemList) {
-            Product product = productMapper.selectByPrimaryKey(orderItem.getProductId());
+    public void decreaseStock(List<OrderItemVo> orderItemVoList) {
+        if(CollectionUtils.isEmpty(orderItemVoList)){//要扣的库存没东西？
+            log.error("异步扣库存：库存为空");
+            return ;
+        }
+        Long orderNo = orderItemVoList.get(0).getOrderNo() ;
+        for (OrderItemVo orderItemVo : orderItemVoList) {
+            Product product = productMapper.selectByPrimaryKey(orderItemVo.getProductId());
             if (product != null) {
-                product.setStock(product.getStock() - orderItem.getQuantity());
-                rows += productMapper.updateByPrimaryKeySelective(product);
+                if(product.getStock() < orderItemVo.getQuantity()){
+                    log.error("异步扣库存：库存不足");
+                    throw new InadequateStockException() ;
+                }
+                product.setStock(product.getStock() - orderItemVo.getQuantity());
             }
         }
-        if(rows != orderItemList.size()){
-            return ServerResponse.createBySuccess(ResponseCode.ERROR.getDesc(),orderNo) ;
-        }
-        return ServerResponse.createBySuccess(ResponseCode.SUCCESS.getDesc(),orderNo) ;
+        //异步回调修改订单状态
+        log.info("开始异步回调修改订单状态{}",orderNo);
+        modifyOrderStatusProducer.sendMessage(String.valueOf(orderNo));
+        log.info("异步扣库存完成{}",orderItemVoList);
     }
 }

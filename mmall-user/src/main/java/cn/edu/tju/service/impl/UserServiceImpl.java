@@ -110,7 +110,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ServerResponse checkValid(String str, String type) {
-
         log.info("str={}  type={}",str,type);
         if(StringUtils.isNotBlank(type))
         {
@@ -138,6 +137,9 @@ public class UserServiceImpl implements UserService {
     }
 
     private UserVO getUserVOInSession(String token){
+        if(StringUtils.isBlank(token)){
+            return null ;
+        }
         String userJson = stringRedisTemplate.opsForValue().get(token) ;
         if(StringUtils.isBlank(userJson)){
             return null ;
@@ -262,6 +264,7 @@ public class UserServiceImpl implements UserService {
         int rows = userMapper.updateByPrimaryKeySelective(updateUser) ;
         if(rows > 0 )
         {
+            updateUser.setUsername(userVO.getUsername()) ;
             //更新redis中的用户数据
             stringRedisTemplate.opsForValue().getAndSet(userKey,JacksonUtil.bean2Json(updateUser)) ;
             return ServerResponse.createBySuccess("更新个人信息成功",Pojo2VOUtil.user2userVO(updateUser));

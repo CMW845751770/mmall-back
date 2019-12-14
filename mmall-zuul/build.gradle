@@ -24,13 +24,17 @@ ext {
 }
 
 dependencies {
+    compile(project(':mmall-commons')) {
+        exclude group: 'org.mybatis.spring.boot' //by group
+        exclude group: 'org.springframework.boot' //by group
+    }
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    annotationProcessor 'org.projectlombok:lombok:1.16.16'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-bus-amqp', version: '2.1.2.RELEASE'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

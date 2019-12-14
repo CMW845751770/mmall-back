@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cart
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG
+        enabled: true
+  profiles:
+    active: online
+eureka:
+  client:
+    service-url:
+      defaultZone: http://mmall-eureka:8000/eureka/
+  instance:
+    prefer-ip-address: true

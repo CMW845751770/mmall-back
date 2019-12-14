@@ -1,7 +1,7 @@
 package cn.edu.tju.commons;
 
 /**
- * 鍝嶅簲鐘舵�佺爜鐨勬灇涓剧被
+ * 响应状态码的枚举类
  */
 public enum ResponseCode {
 

@@ -19,8 +19,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://localhost:8000/eureka/
-#      defaultZone: http://soufun-eureka:8000/eureka/
+      defaultZone: http://mmall-eureka:8000/eureka/
 management:
   endpoints:
     web:

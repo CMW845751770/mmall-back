@@ -13,7 +13,7 @@ public class CookieUtil {
     public static final int COOKIE_HALF_HOUR = 30 * 60;
 
     /**
-     * æ ¹æ®Cookieåç§°å¾—åˆ°Cookieå¯¹è±¡ï¼Œä¸å­˜åœ¨è¯¥å¯¹è±¡åˆ™è¿”å›Null
+     * ¸ù¾İCookieÃû³ÆµÃµ½Cookie¶ÔÏó£¬²»´æÔÚ¸Ã¶ÔÏóÔò·µ»ØNull
      *
      * @param request
      * @param name
@@ -32,7 +32,7 @@ public class CookieUtil {
     }
 
     /**
-     * æ ¹æ®Cookieåç§°ç›´æ¥å¾—åˆ°Cookieå€¼
+     * ¸ù¾İCookieÃû³ÆÖ±½ÓµÃµ½CookieÖµ
      *
      * @param request
      * @param name
@@ -47,10 +47,10 @@ public class CookieUtil {
     }
 
     /**
-     * ç§»é™¤cookie
+     * ÒÆ³ıcookie
      * @param request
      * @param response
-     * @param name è¿™ä¸ªæ˜¯åç§°ï¼Œä¸æ˜¯å€¼
+     * @param name Õâ¸öÊÇÃû³Æ£¬²»ÊÇÖµ
      */
     public static synchronized  void removeCookie(HttpServletRequest request,
                                     HttpServletResponse response, String name) {
@@ -67,7 +67,7 @@ public class CookieUtil {
     }
 
     /**
-     * æ·»åŠ ä¸€æ¡æ–°çš„Cookieï¼Œå¯ä»¥æŒ‡å®šè¿‡æœŸæ—¶é—´(å•ä½ï¼šç§’)
+     * Ìí¼ÓÒ»ÌõĞÂµÄCookie£¬¿ÉÒÔÖ¸¶¨¹ıÆÚÊ±¼ä(µ¥Î»£ºÃë)
      *
      * @param response
      * @param name
@@ -98,7 +98,7 @@ public class CookieUtil {
     }
 
     /**
-     * æ·»åŠ ä¸€æ¡æ–°çš„Cookieï¼Œé»˜è®¤30åˆ†é’Ÿè¿‡æœŸæ—¶é—´
+     * Ìí¼ÓÒ»ÌõĞÂµÄCookie£¬Ä¬ÈÏ30·ÖÖÓ¹ıÆÚÊ±¼ä
      *
      * @param response
      * @param name

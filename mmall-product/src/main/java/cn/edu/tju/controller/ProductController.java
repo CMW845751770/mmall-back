@@ -4,7 +4,6 @@ import cn.edu.tju.commons.ServerResponse;
 import cn.edu.tju.service.ProductService;
 import cn.edu.tju.vo.ProductDetailVo;
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
