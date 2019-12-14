@@ -41,7 +41,8 @@ public class LoginFilter extends ZuulFilter {
     @Override
     public boolean shouldFilter() {
         ImmutableSet<String> immutableSet = ImmutableSet.of("/user/login.do","/user/logout.do",
-                "/user/register.do","/product/detail.do","/product/list.do") ;
+                "/user/register.do","/product/list.do","/user/check_valid.do","/user/forget_get_question.do",
+                "/user/forget_check_answer.do","/user/forget_reset_password.do") ;
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletRequest request = context.getRequest();
         String uri = request.getRequestURI();

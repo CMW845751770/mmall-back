@@ -2,150 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cfd5373-6b72-4927-81af-c8edd7fbd203" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/config/RedisCacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-cart/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/exception/InadequateStockException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/ShippingForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/message/MessageConst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/NetworkUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/controller/PayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/hystrix/PayServiceFallbackFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/PayService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/config/RedisCacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/message/consumer/ModifyOrderStatusConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/message/producer/DecreaseStockProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-order/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-pay/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/config/RedisCacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/message/consumer/DecreaseStockMessageConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/message/producer/ModifyOrderStatusProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/LoginFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/RateLimiterFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/util/ZuulUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_projectlombok_lombok_1_18_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-cart.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-commons.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-consumer.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-order.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-order.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-order.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-order.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-pay.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-product.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-user.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cn.edu.tju.mmall-zuul.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-cart/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/MmallCartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/MmallCartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/mapper/CartMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/mapper/ProductMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-cart/src/main/java/cn/edu/tju/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/resources/mappers/CartMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-cart/src/main/resources/mappers/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/ProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/ResponseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/ResponseCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/ServerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/commons/ServerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/UserForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/UserForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/UserUpdateForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/form/UserUpdateForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/ArithUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/ArithUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/CookieUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/CookieUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/FTPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/FTPUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/Pojo2VOUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/utils/Pojo2VOUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/CartProductVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/CartProductVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/OrderVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/OrderVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/ProductDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/ProductDetailVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/ProductListVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/ProductListVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/vo/UserVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-commons/src/main/resources/mmall.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mmall.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-config/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-config/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/controller/ShippingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/hystrix/OrderServiceFallbackFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/hystrix/OrderServiceFallbackFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/hystrix/ShippingServiceFallbackFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/hystrix/UserServiceFallbackFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/hystrix/UserServiceFallbackFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/ShippingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/java/cn/edu/tju/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-consumer/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-consumer/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-eureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-eureka/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-order/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/MmallOrderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/MmallOrderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/mapper/CartMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/CartMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/mapper/OrderItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/OrderItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/mapper/ProductMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/mapper/ShippingMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/ShippingMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/message/DecreaseStockMessageOrderReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/java/cn/edu/tju/utils/Pojo2VoUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/resources/mappers/CartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/CartMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/resources/mappers/OrderItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/OrderItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/resources/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/resources/mappers/ProductMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-order/src/main/resources/mappers/ShippingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/ShippingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-pay/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/controller/PayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/controller/PayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/controller/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/controller/ShippingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/mapper/OrderItemMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/mapper/OrderMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/mapper/PayInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/PayInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/mapper/ShippingMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/service/ShippingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/service/ShippingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/service/impl/PayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/service/impl/PayServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/service/impl/ShippingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/service/impl/ShippingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/resources/mappers/OrderItemMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/resources/mappers/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/resources/mappers/PayInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/PayInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-pay/src/main/resources/mappers/ShippingMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-product/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/config/RedisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/java/cn/edu/tju/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/message/DecreaseStockMessageProductReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/repository/CategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/repository/impl/CategoryRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/java/cn/edu/tju/utils/Product2ProductDetailVoUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-product/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/resources/mappers/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-commons/src/main/resources/mappers/CategoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-product/src/main/resources/mappers/ProductMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-user/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-user/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/MmallUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/MmallUserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-user/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-user/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-zuul/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-zuul/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-zuul/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-zuul/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/GlobalPreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/GlobalPreFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mmall-zuul/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-zuul/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/LoginFilter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -274,23 +132,23 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="mmall-pay" type="f1a62948:ProjectNode" />
+                <item name="mmall-zuul" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="mmall-pay" type="f1a62948:ProjectNode" />
-                <item name="mmall-pay" type="2d1252cf:ModuleNode" />
+                <item name="mmall-zuul" type="f1a62948:ProjectNode" />
+                <item name="mmall-zuul" type="2d1252cf:ModuleNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="mmall-pay" type="f1a62948:ProjectNode" />
-                <item name="mmall-pay" type="2d1252cf:ModuleNode" />
+                <item name="mmall-zuul" type="f1a62948:ProjectNode" />
+                <item name="mmall-zuul" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="mmall-pay" type="f1a62948:ProjectNode" />
-                <item name="mmall-pay" type="2d1252cf:ModuleNode" />
+                <item name="mmall-zuul" type="f1a62948:ProjectNode" />
+                <item name="mmall-zuul" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -302,7 +160,17 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mmall-commons/src/main/resources/mmall.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -424,20 +292,28 @@
             <path>
               <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="mmall" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="mmall-pay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="mmall-commons" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="mmall" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="mmall-pay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="mmall-commons" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
               <item name="mmall" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="mmall-pay" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="mmall-commons" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mmall" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="mmall-commons" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -453,7 +329,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576314182796" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576314668214" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8 (2)" />
     <property name="last_opened_file_path" value="D:/git/soft/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -514,49 +390,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.mmall-pay [bootJar]">
-    <configuration name="mmall-cart [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-cart" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootJar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.mmall-zuul [bootJar]">
     <configuration name="mmall-config [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-config" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootJar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="mmall-pay [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-pay" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -603,6 +441,44 @@
         <option name="taskNames">
           <list>
             <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="mmall-zuul [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-zuul" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="mmall-zuul [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mmall-zuul" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -682,11 +558,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.mmall-zuul [clean]" />
+        <item itemvalue="Gradle.mmall-zuul [build]" />
         <item itemvalue="Gradle.mmall-zuul [bootJar]" />
         <item itemvalue="Gradle.mmall-user [bootJar]" />
         <item itemvalue="Gradle.mmall-config [bootJar]" />
-        <item itemvalue="Gradle.mmall-cart [bootJar]" />
-        <item itemvalue="Gradle.mmall-pay [bootJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -802,12 +678,12 @@
       <workItem from="1576213474885" duration="686000" />
       <workItem from="1576231236543" duration="4486000" />
       <workItem from="1576241049050" duration="5149000" />
-      <workItem from="1576290209283" duration="22720000" />
+      <workItem from="1576290209283" duration="23203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380665000" />
+    <option name="totallyTimeSpent" value="381148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -820,6 +696,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.30764076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -859,7 +736,7 @@
       <window_info anchor="right" id="Run" order="12" sideWeight="0.49932975" weight="0.672252" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.3036193" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716714" visible="true" weight="0.30764076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -872,12 +749,12 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.70113313" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.2181303" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49865952" weight="0.2181303" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.32152975" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.33569404" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5020107" side_tool="true" weight="0.9405099" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.9405099" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49798927" weight="0.39518413" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -893,8 +770,8 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.3297587" />
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
-      <window_info anchor="right" id="Gradle" order="11" weight="0.22520107" />
-      <window_info anchor="right" id="Run" order="12" sideWeight="0.49932975" weight="0.67627347" />
+      <window_info anchor="right" id="Gradle" order="11" weight="0.38806972" />
+      <window_info anchor="right" id="Run" order="12" sideWeight="0.49932975" weight="0.672252" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1174,13 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmall-cart/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmall-config/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1199,13 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1286,13 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/LoginFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmall-pay/src/main/java/cn/edu/tju/controller/PayController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -1300,10 +1156,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mmall-user/src/main/java/cn/edu/tju/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmall-zuul/src/main/java/cn/edu/tju/filter/LoginFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmall-cart/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mmall-commons/src/main/resources/mmall.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
         </state>
       </provider>
     </entry>
