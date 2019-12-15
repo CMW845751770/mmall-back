@@ -145,7 +145,7 @@ zuul的作用是限流、鉴权以及路由转发。这里我限流的功能是�
 
 > Windows环境部署
 使用Git从仓库克隆至本地，使用IDEA导入项目，因为本项目是使用Gradle构建，所以请选择导入一个Gradle项目。![Alt text](./documentation/10.PNG)
-导入项目后导入数据库sql文件，配置好redis ip、rabbitMQ ip、Config Server信息以及图片服务器等信息。因为我是用的配置方式是Config Server从GitHub上拉取配置然后通过应用通过 Stream 获取配置信息。所以你需要在GitHub、码云或者GitLab创建你的配置仓库，然后将模块下的application.yml文件上传到到仓库中。最后按照Eureka -> Config -> User -> Product  -> Cart -> Order -> Pay -> Consumer -> Zuul 的顺序启动项目即可。前端项目的部署和我开头所说的一样请参照最上面的那个开源仓库。
+导入项目后导入数据库sql文件，配置好redis ip、rabbitMQ ip、Config Server信息以及图片服务器等信息。因为我是用的配置方式是Config Server从GitHub上拉取配置然后通过应用通过 Stream 获取配置信息。所以你需要在GitHub、码云或者GitLab创建你的配置仓库，然后将模块下的application.yml文件上传到到仓库中。你可以按照我这个开源的配置仓库这样配置：https://github.com/CMW845751770/mmall-back-config.git 。最后按照Eureka -> Config -> User -> Product  -> Cart -> Order -> Pay -> Consumer -> Zuul 的顺序启动项目即可。前端项目的部署和我开头所说的一样请参照最上面的那个开源仓库。
 
 > Docker环境部署
 使用IDEA导出各个模块的SpringBoot Jar包，并上传至阿里云或者网易云的镜像仓库中，在你的服务器上安装Rancher，在Rancher中创建主机(这需要另外一台服务器)，然后再主机上通过从镜像仓库上拉去镜像的方式创建服务、应用。![Alt text](./documentation/07.PNG)
