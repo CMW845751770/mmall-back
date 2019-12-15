@@ -11,8 +11,6 @@
 
 前端项目是基于`MMall-front-end-web`这个仓库改造得来的，这是我在GitHub上找到的别人开源的一个商城前端项目，前端项目的部署完全可以参考这个项目。仓库地址：https://github.com/Paladinhanxiao/MMall-front-end-web.git 。
 
-#### 前台商城系统后端
-后端项目`mmall-back`地址：https://github.com/CMW845751770/mmall-back.git，
 
 #### 前台商城系统演示
 #####部分截图
