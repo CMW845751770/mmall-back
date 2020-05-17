@@ -13,7 +13,7 @@
 
 
 #### 前台商城系统演示
-#####部分截图
+##### 部分截图
 ![Alt text](./documentation/01.PNG)
 ![Alt text](./documentation/02.PNG)
 ![Alt text](./documentation/03.PNG)
