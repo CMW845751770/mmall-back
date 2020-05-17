@@ -59,7 +59,7 @@ mmall
 ### 架构图
 
 #### 系统架构图
-![enter image description here](http://img.sgxm.tech/008.PNG)
+![enter image description here](http://img.sgxm.tech/008.png)
 首先收到用户请求的是nginx服务器，根据用户请求的url跳转到前端的Html页面，前端通过nginx的反向代理指向后端的zuul网关，zuul网关再根据请求的uri路由到不同的服务上。比如uri为/user/login.do映射到用户登录服务，/product/list.do则映射到商品展示服务。
 
 zuul的作用是限流、鉴权以及路由转发。这里我限流的功能是通过guava的令牌桶来实现的。
